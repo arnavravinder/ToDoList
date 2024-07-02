@@ -89,3 +89,51 @@ function removeTask(button) {
     taskList.removeChild(taskItem);
 }
 
+saveToCloudButton.addEventListener('click', saveTasksToCloud);
+
+function saveTasksToCloud() {
+    const user = auth.currentUser;
+    if (user) {
+        const tasks = [];
+        document.querySelectorAll('.task-item').forEach(item => {
+            tasks.push({
+                text: item.innerText.split('Complete')[0].trim(),
+                completed: item.classList.contains('completed')
+            });
+        });
+        database.ref('tasks/' + user.uid).set(tasks);
+        alert('Tasks saved to cloud!');
+    } else {
+        alert('Please login to save tasks to cloud.');
+    }
+}
+
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    document.querySelector('.navbar').classList.toggle('dark-mode');
+    document.querySelectorAll('.task-item').forEach(item => item.classList.toggle('dark-mode'));
+    document.querySelector('.login-box').classList.toggle('dark-mode');
+    document.querySelectorAll('.input-field').forEach(input => input.classList.toggle('dark-mode'));
+});
+
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const loginButton = document.getElementById('login-button');
+const signupButton = document.getElementById('signup-button');
+
+loginButton.addEventListener('click', () => {
+    const email = emailInput.value;
+    const password = passwordInput.value;
+    auth.signInWithEmailAndPassword(email, password).catch(error => {
+        alert(error.message);
+    });
+});
+
+signupButton.addEventListener('click', () => {
+    const email = emailInput.value;
+    const password = passwordInput.value;
+    auth.createUserWithEmailAndPassword(email, password).catch(error => {
+        alert(error.message);
+    });
+});
