@@ -101,3 +101,92 @@ body {
     color: black;
 }
 
+.button.dark-mode {
+    border-color: black;
+    color: black;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    width: 300px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color: rgb(34, 37, 37);
+    transition: background-color 0.3s;
+}
+
+.task-item.completed {
+    background-color: rgb(25, 28, 28);
+    text-decoration: line-through;
+}
+
+.task-item.dark-mode {
+    background-color: lightgrey;
+    color: black;
+}
+
+.pomodoro {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.timer {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.spotify-embed {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    text-align: center;
+    border: 2px solid #00ffa8;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgb(34, 37, 37);
+    transition: box-shadow 0.3s;
+}
+
+.login-box:hover {
+    box-shadow: 0 0 10px #00ffa8;
+}
+
+.login-box.dark-mode {
+    background-color: lightgrey;
+    color: black;
+}
+
+.dark-mode .login-box {
+    border-color: black;
+}
+
+.dark-mode .navbar {
+    background-color: lightgrey;
+}
+
+.dark-mode .task-item {
+    background-color: lightgrey;
+    color: black;
+}
+
+.dark-mode .input-field {
+    background-color: lightgrey;
+    color: black;
+}
