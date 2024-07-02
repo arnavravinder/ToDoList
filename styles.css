@@ -1,0 +1,103 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(17, 19, 19);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: white;
+    color: black;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(34, 37, 37);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s;
+}
+
+.navbar.dark-mode {
+    background-color: lightgrey;
+}
+
+.navbar-heading {
+    font-size: 1.5rem;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.navbar-list {
+    display: flex;
+    list-style: none;
+}
+
+.navbar-list-item {
+    color: white;
+    text-decoration: none;
+    padding-right: 20px;
+    cursor: pointer;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.navbar-list-item:hover {
+    color: #00ffa8;
+    text-shadow: 0 0 10px #00ffa8;
+}
+
+.navbar.dark-mode .navbar-list-item {
+    color: black;
+}
+
+.container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo-app {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #00ffa8;
+    background-color: transparent;
+    color: white;
+}
+
+.input-field.dark-mode {
+    background-color: lightgrey;
+    color: black;
+}
+
+.button {
+    padding: 10px 20px;
+    border: 2px solid #00ffa8;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #00ffa8;
+    cursor: pointer;
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.button:hover {
+    box-shadow: 0 0 10px #00ffa8;
+    background-color: #00ffa8;
+    color: black;
+}
+
