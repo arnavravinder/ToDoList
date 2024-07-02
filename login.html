@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-heading">To-Do List</div>
+        <ul class="navbar-list">
+            <li><a class="navbar-list-item" href="index.html">Home</a></li>
+            <li><a class="navbar-list-item" href="login.html">Login</a></li>
+            <li><a class="navbar-list-item" href="#" id="dark-mode-toggle"><img src="dark-mode-icon.png" alt="Toggle Dark Mode"></a></li>
+        </ul>
+    </div>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="highlight">Login</h1>
+            <input type="email" id="email" placeholder="Email" class="input-field">
+            <input type="password" id="password" placeholder="Password" class="input-field">
+            <button id="login-button" class="button highlight2">Login</button>
+            <button id="signup-button" class="button highlight2">Sign Up</button>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

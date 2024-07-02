@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-heading">To-Do List App</div>
+        <ul class="navbar-list">
+            <li><a class="navbar-list-item" href="index.html">Home</a></li>
+            <li><a class="navbar-list-item" href="login.html">Login</a></li>
+            <li><a class="navbar-list-item" href="#" id="dark-mode-toggle"><img src="icon.png" alt="Toggle Dark Mode"></a></li>
+        </ul>
+    </div>
+    
+    <div class="container">
+        <div class="todo-app">
+            <h1 class="highlight">To-Do List</h1>
+            <input type="text" id="task-input" placeholder="Add a new task" class="input-field">
+            <button id="add-task-button" class="button highlight2">Add Task</button>
+            <ul id="task-list" class="task-list"></ul>
+        </div>
+        <button id="save-to-cloud" class="button highlight2">Save to Cloud</button>
+
+        <div class="pomodoro">
+            <h2 class="highlight">Pomodoro Timer</h2>
+            <div class="timer">
+                <span id="minutes">25</span>:<span id="seconds">00</span>
+            </div>
+            <button id="start-timer" class="button highlight2">Start</button>
+            <button id="reset-timer" class="button highlight2">Reset</button>
+        </div>
+        <div class="spotify-embed">
+            <h2 class="highlight">Spotify</h2>
+            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
