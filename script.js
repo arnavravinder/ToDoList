@@ -137,3 +137,44 @@ signupButton.addEventListener('click', () => {
         alert(error.message);
     });
 });
+
+
+auth.onAuthStateChanged(user => {
+    if (user) {
+        document.getElementById('user-status').innerText = `Logged in as ${user.email}`;
+        loadTasksFromCloud(user.uid);
+    } else {
+        document.getElementById('user-status').innerText = 'Not logged in';
+        taskList.innerHTML = '';
+    }
+});
+
+function loadTasksFromCloud(uid) {
+    database.ref('tasks/' + uid).once('value').then(snapshot => {
+        const tasks = snapshot.val();
+        if (tasks) {
+            taskList.innerHTML = '';
+            tasks.forEach(task => {
+                const taskItem = document.createElement('li');
+                taskItem.className = 'task-item';
+                if (task.completed) {
+                    taskItem.classList.add('completed');
+                }
+                taskItem.innerHTML = `${task.text} <button onclick="completeTask(this)" class="button highlight2">Complete</button> <button onclick="removeTask(this)" class="button highlight2">Remove</button>`;
+                taskList.appendChild(taskItem);
+                VanillaTilt.init(taskItem, {
+                    max: 25,
+                    speed: 400
+                });
+            });
+        }
+    });
+}
+
+document.getElementById('logout-button').addEventListener('click', () => {
+    auth.signOut().then(() => {
+        alert('Logged out successfully!');
+    }).catch(error => {
+        alert(error.message);
+    });
+});
